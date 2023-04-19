@@ -20,8 +20,7 @@ from gestionPedidos.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('obtener_token/', obtener_token),
-    path('buscar_productos/',buscar_productos),
-    path('procesar_busqueda/',procesar_busqueda),
+    path('busqueda/',busqueda),
     path('contactar/', contactar),
     path('contactar1/', contactar1),
 ]
