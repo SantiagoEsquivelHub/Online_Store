@@ -5,8 +5,13 @@ from django.core.mail import send_mail
 from gestionPedidos.models import Articulos
 from gestionPedidos.forms import FormularioContacto
 import json
+import django
 # Create your views here.
 
+def obtener_token(request):
+    token = django.middleware.csrf.get_token(request)
+    print(token)
+    return HttpResponse(token)
 
 def buscar_productos(request):
     return render(request, "buscar_productos.html")
@@ -25,6 +30,7 @@ def procesar_busqueda(request):
 
 
 def contactar(request):
+    print(django.middleware.csrf.get_token(request))
     if request.method == "POST":
         request.POST = request.body.decode('utf-8')
         request.POST = json.loads(request.POST)
