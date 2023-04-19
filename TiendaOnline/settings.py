@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+EMAIL_HOST_USER = 'host_user@gmail.com'
 # Application definition
 
 INSTALLED_APPS = [
