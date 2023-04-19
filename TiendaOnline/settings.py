@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+EMAIL_HOST_USER = 'host_user@gmail.com'
 # Application definition
 
 INSTALLED_APPS = [
@@ -84,7 +84,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'django_db',
         'USER': 'postgres',
-        'PASSWORD': 'santiago123',
+        'PASSWORD': 'pg123',
         'HOST': 'localhost',
         'DATABASE_PORT': '5432',
     }
@@ -144,3 +144,8 @@ EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 #EMAIL_HOST_USER = ""
 #EMAIL_HOST_PASSWORD = ""
+
+DEFAULT_AUTHENTICATION_CLASSES= (
+    'rest_framework.authentication.SessionAuthentication',
+    'rest_framework.authentication.BasicAuthentication'
+),
