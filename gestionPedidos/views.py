@@ -45,7 +45,7 @@ def contactar(request):
             "data": send_mail
         }
         return HttpResponse(json.dumps(response), content_type="application/json")
-    message = "Hola, este mensaje viene del backend :D"
+    message = "Hola, este mensaje viene del backend, llena el formulario :D"
     return HttpResponse(json.dumps(message), content_type="application/json")
 
 
